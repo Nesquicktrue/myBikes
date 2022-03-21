@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "589a2e7512f8f5550266321cf6c55259",
+    "content-hash": "37e6e9da497f21e8e3c6e8956d4e86bb",
     "packages": [
         {
             "name": "catfan/medoo",
@@ -154,54 +154,6 @@
             "time": "2022-01-07T12:00:00+00:00"
         },
         {
-            "name": "joseph-lenton/php-error",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/JosephLenton/PHP-Error.git",
-                "reference": "08d5aacda02352ca72198e3f5161d83338e26389"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/JosephLenton/PHP-Error/zipball/08d5aacda02352ca72198e3f5161d83338e26389",
-                "reference": "08d5aacda02352ca72198e3f5161d83338e26389",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.3.0"
-            },
-            "default-branch": true,
-            "type": "library",
-            "autoload": {
-                "files": [
-                    "src/php_error.php"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "BSD-3-Clause"
-            ],
-            "authors": [
-                {
-                    "name": "Joseph Lenton",
-                    "homepage": "http://www.playmycode.com",
-                    "role": "Developer"
-                }
-            ],
-            "description": "Better error reporting for PHP, and prettier too!",
-            "homepage": "https://github.com/JosephLenton/PHP-Error",
-            "keywords": [
-                "error",
-                "php",
-                "reporting"
-            ],
-            "support": {
-                "issues": "https://github.com/JosephLenton/PHP-Error/issues",
-                "source": "https://github.com/JosephLenton/PHP-Error/tree/master"
-            },
-            "time": "2018-12-11T01:19:28+00:00"
-        },
-        {
             "name": "psr/log",
             "version": "1.1.4",
             "source": {
@@ -305,9 +257,7 @@
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": {
-        "joseph-lenton/php-error": 20
-    },
+    "stability-flags": [],
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": [],

@@ -1,7 +1,6 @@
 {
     "require": {
         "catfan/medoo": "^2.1",
-        "joseph-lenton/php-error": "dev-master",
         "filp/whoops": "^2.14",
         "twbs/bootstrap": "5.0.2"
     }

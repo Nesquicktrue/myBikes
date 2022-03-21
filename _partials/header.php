@@ -9,6 +9,7 @@
 	<title>Moje kola</title>
 
 	<link rel="stylesheet" href="_inc/vendor/twbs/bootstrap/dist/css/bootstrap.css">
+	<link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
 

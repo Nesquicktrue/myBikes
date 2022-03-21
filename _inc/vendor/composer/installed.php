@@ -1,22 +1,22 @@
 <?php return array(
     'root' => array(
-        'pretty_version' => '1.0.0+no-version-set',
-        'version' => '1.0.0.0',
+        'pretty_version' => 'dev-main',
+        'version' => 'dev-main',
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => NULL,
+        'reference' => '382f95eb541b3bdb3b254de9584fecdca1d9565e',
         'name' => '__root__',
         'dev' => true,
     ),
     'versions' => array(
         '__root__' => array(
-            'pretty_version' => '1.0.0+no-version-set',
-            'version' => '1.0.0.0',
+            'pretty_version' => 'dev-main',
+            'version' => 'dev-main',
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => NULL,
+            'reference' => '382f95eb541b3bdb3b254de9584fecdca1d9565e',
             'dev_requirement' => false,
         ),
         'catfan/medoo' => array(
@@ -35,17 +35,6 @@
             'install_path' => __DIR__ . '/../filp/whoops',
             'aliases' => array(),
             'reference' => 'a63e5e8f26ebbebf8ed3c5c691637325512eb0dc',
-            'dev_requirement' => false,
-        ),
-        'joseph-lenton/php-error' => array(
-            'pretty_version' => 'dev-master',
-            'version' => 'dev-master',
-            'type' => 'library',
-            'install_path' => __DIR__ . '/../joseph-lenton/php-error',
-            'aliases' => array(
-                0 => '9999999-dev',
-            ),
-            'reference' => '08d5aacda02352ca72198e3f5161d83338e26389',
             'dev_requirement' => false,
         ),
         'psr/log' => array(
