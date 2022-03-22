@@ -10,11 +10,6 @@
     <script src="_inc/vendor/twbs/bootstrap/dist/js/bootstrap.bundle.js"></script>
 	<script src="assets/js/jquery.maphilight.min.js"></script>
 
-	<script type="text/javascript">$(function() {
-        $('.map').maphilight();
-    });
-	</script>
-
 	<script src="assets/js/app.js"></script>
 
 
