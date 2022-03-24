@@ -3,8 +3,14 @@
 	// include
 	require 'config.php';
 
-	// pridej do DB
- /* 	$testDB = $database->get('components', ['model','vyrobce']);
-	 echo $testDB; */
+		$zobrazenyTyp = $_GET['type'];
 
- 	 
+		$response =	$database->select('components','*',[
+						'type' => $zobrazenyTyp
+					]);
+		
+		echo '<pre>'; print_r($response); echo '</pre>';
+                
+
+
+	exit;
