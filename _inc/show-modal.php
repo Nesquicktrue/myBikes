@@ -24,6 +24,9 @@
 	$response .= "<li>Typ: <br>" . $model . "</li>";
 	$response .= "</ul>";
 	$response .= "</div>";
+	$response .= '<div class="modal-footer">';
+	$response .= '<a href="edit.php?type='. $zobrazenyTyp .'">Změnit</a>';
+	$response .= "</div>";
 	
 
 	echo $response;
