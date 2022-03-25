@@ -16,7 +16,7 @@
 
     // Zvyraznovac mapy obrazku
     $(function() {
-        $('.map').maphilight();
+        $('.map').imageMapResize().maphilight();
     });
 	
     // Predani dat z mapy do modalu
@@ -39,7 +39,7 @@
             console.log(data);
         });
     });
-
+    
         /* $('#CompModal').modal('show').attr('data-js',comp); */
     });
     
