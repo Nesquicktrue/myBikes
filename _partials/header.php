@@ -29,7 +29,7 @@
           <a class="nav-link" href="vypis.php">Výpis komponent</a>
         </li>
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <a class="nav-link dropdown-toggle " href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Můj účet
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">

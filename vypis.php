@@ -4,19 +4,30 @@
 <div class="page-header">
     <h1>Výpis komponent</h1>
 </div>
-<?php $data = $database->select('components', ['nazev', 'vyrobce', 'model']); ?>
 
-<ul class="list-group">
-    <?php
-        foreach ( $data as $item ) {
-            echo '<ul class="list-group col-sm-6">';
-                foreach ( $item as $i) {
-                    echo '<li class="list-group-item">' . $i . '</li>';
-                }
-            echo '</ul><br>';
-        }
-    ?>
-</ul>
+<?php $data = $database->select('components', ['nazev', 'vyrobce', 'model']); 
+
+    echo    '<table class="table table-striped">
+                <thead>
+                <tr>
+                <th scope="col">Typ</th>
+                <th scope="col">Výrobce</th>
+                <th scope="col">Popis</th>
+                </tr>
+                </thead>
+                <tbody>';
+                
+    foreach ( $data as $item ) {
+        echo    '<tr>
+                   <th scope="row">'. $item["nazev"] .'</th>
+                   <td>'. $item["vyrobce"] .'</td>
+                   <td>'. $item["model"] .'</td>
+                </tr>';
+        };
+
+    echo        '</tbody> </table>';
+
+?>
 
 <form id="pridatKomponentuForm" class="" action="_inc/add-new.php" method="post">
     <p class="form-group">
