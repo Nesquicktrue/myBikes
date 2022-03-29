@@ -22,7 +22,7 @@ $nazev = $sloupce[0]['nazev'];
 include_once "_partials/header.php";
 
 ?>
-
+<div class="container">
     <div class="page-header">
         <h1>Upravit: <?php echo $nazev ?></h1>
     </div>
@@ -36,12 +36,13 @@ include_once "_partials/header.php";
 	        <p class="form-group">
 		        <input name="type" type="hidden" value="<?php echo $zobrazenyTyp ?>">
 		        <input name="nazev" type="hidden" value="<?php echo $nazev ?>">
-	            <input class="btn-sm btn-danger" type="submit" value="Uložit změnu">
+	            <input class="btn btn-danger" type="submit" value="Uložit změnu">
 		        <span class="controls">
 			        <a href="index.php" class="back-link text-muted">Zpět</a>
 		        </span>
 	        </p>
 	    </form>
 	</div>
+</div>
 
 <?php include_once "_partials/footer.php" ?>

@@ -46,3 +46,11 @@
  coords="117,228,115"
  shape="circle"
  >
+
+ <!-- Sedlo -->
+ <area alt="Sedlo" title="Sedlo" 
+ class="part"
+ id="seat"
+ coords="359,43,372,44,384,46,405,54,416,55,424,52,431,48,437,42,441,34,442,28,420,32,359,30,352,32,353,40" 
+ shape="poly"
+ >

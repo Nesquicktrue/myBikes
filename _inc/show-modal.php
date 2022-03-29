@@ -19,10 +19,9 @@
     $response .= '</div>';
     
 	$response .= '<div class="modal-body" >';
-	$response .= "<ul>";
-	$response .= "<li>Výrobce: <strong>" . $vyrobce . "</strong></li>"; 
-	$response .= "<li>Typ: <br>" . $model . "</li>";
-	$response .= "</ul>";
+	$response .= "Výrobce: <strong>" . $vyrobce . "</strong>"; 
+	$response .= '<div class="d-flex gap-1"><div>Popis: </div><div>' . $model . '</div>';
+	$response .= "</div>";
 	$response .= "</div>";
 	$response .= '<div class="modal-footer">';
 	$response .= '<a href="edit.php?type='. $zobrazenyTyp .'">Změnit</a>';

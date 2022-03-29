@@ -11,6 +11,6 @@
 
 	// success
 	if ( $id ) {
-		header("Location: ../index.php");
+		header("Location: ../vypis.php");
 		die();
 	}
