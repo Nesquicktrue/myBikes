@@ -1,4 +1,4 @@
-<?php include "_partials/header.php" ?>
+<?php include "_partials/header-min.php" ?>
 
 
 <div class="page-header">
@@ -60,6 +60,7 @@
     </div>
     <button type="submit" class="btn btn-danger my-2">Uložit</button>
 </form>
+</div>
 </div>
 <br><br><br><br><br><br><br><br><br><br><br><br>
 

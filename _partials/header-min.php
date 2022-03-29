@@ -30,29 +30,29 @@
 </head>
 
 <body>
-<header id="header" class="fixed-top header-transparent">
+<header id="header" class="fixed-top">
     <div class="container d-flex align-items-center justify-content-between">
 
       <h1 class="logo"><a href="index.html">myBike</a></h1>
 
       <nav id="navbar" class="navbar">
         <ul>
-          <li><a class="nav-link scrollto active" href="index.php">Domů</a></li>
-          <li><a class="nav-link" href="koloimg.php">Mapa kola</a></li>
+          <li><a class="nav-link" href="index.php">Domů</a></li>
+          <li><a class="nav-link active" href="koloimg.php">Mapa</a></li>
           <li><a class="nav-link" href="vypis.php">Výpis komponent</a></li>
+          <li class="dropdown"><a href="#"><span>Moje kola</span> <i class="bi bi-chevron-down"></i></a>
+            <ul>
+              <li><a href="#">Bajk 1</a></li>
+              <li><a href="#">Bajk 2</a></li>
+              <li><a href="#">Bajk 3</a></li>
+            </ul>
           <li class="dropdown"><a href="#"><span>Můj účet</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
               <li><a href="#">Moje info</a></li>
-              <li class="dropdown"><a href="#"><span>Moje kola</span> <i class="bi bi-chevron-right"></i></a>
-                <ul>
-                  <li><a href="#">Bajk 1</a></li>
-                  <li><a href="#">Bajk 2</a></li>
-                  <li><a href="#">Bajk 3</a></li>
-                </ul>
+              <li><a href="#">Odhlásit</a></li>
               </li>
             </ul>
           </li>
-          <li><a class="nav-link scrollto" href="#contact">Kontakt?</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav>
@@ -60,15 +60,10 @@
     </div>
   </header>
 
-  <!-- ======= Hero Section ======= -->
-  <section id="hero" class="d-flex align-items-center justify-content-center">
-    <div class="container position-relative">
-      <h1>Vítejte v myBike!</h1>
-      <h2>Webové aplikaci, kde si evidujete stav svých bajků.</h2>
-      <a href="#about" class="btn-get-started scrollto">Přihlásit se</a>
-    </div>
-  </section><!-- End Hero -->
-<div>
-  <main id="main">
 
+
+  <main id="main">
+    <br><br><br><br>
+    <div class="container">
+ 
 
