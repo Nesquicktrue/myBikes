@@ -2,7 +2,7 @@
 
 Můj první PHP projekt.
 
-PHP / MySQL / Firebase Auth 
+PHP / MySQL
 
 Bude se jednat se o webovou aplikaci na evidenci kol, jejich komponent a servisních prací.
 
