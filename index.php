@@ -1,4 +1,4 @@
-<?php include "_partials/header-login.php" ?>
+<?php include "_partials/header.php" ?>
 
 <div class="container">
     INDEX

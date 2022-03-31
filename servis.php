@@ -1,4 +1,5 @@
 <?php include "_partials/header.php" ?>
+<?php include "_partials/check-login.php" ?>
 
 
 
@@ -6,7 +7,7 @@
 	<h1>Servisní úkony</h1>
 </div>
 
-<?php $data = $database->select('components', ['nazev', 'vyrobce', 'model', 'type']);
+<?php $data = $database->select('components', ['comname', 'manufacturer', 'model', 'type']);
 ?>
 
 <div class="container formular">
@@ -23,7 +24,7 @@
 		
 		<select class="form-select my-1" name="type" multiple="multiple">
 			<?php foreach ($data as $item) {
-				echo '<option value="' . $item['type'] . '">' . $item['nazev'] . '</option>';
+				echo '<option value="' . $item['type'] . '">' . $item['comname'] . '</option>';
 			};
 			?>
 		</select>

@@ -94,33 +94,39 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 ?>
 
-<div class="container">
-    <h2>Registrace uživatele</h2>
-    <p>Pro založení účtu vyplň prosím formulář níže.</p>
-    <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
-        <div class="form-group">
-            <label>Uživatelské jméno</label>
-            <input type="text" name="username" class="form-control <?php echo (!empty($username_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $username; ?>">
-            <span class="invalid-feedback"><?php echo $username_err; ?></span>
-        </div>
-        <div class="form-group">
-            <label>Heslo</label>
-            <input type="password" name="password" class="form-control <?php echo (!empty($password_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $password; ?>">
-            <span class="invalid-feedback"><?php echo $password_err; ?></span>
-        </div>
-        <div class="form-group">
-            <label>Potvrď heslo</label>
-            <input type="password" name="confirm_password" class="form-control <?php echo (!empty($confirm_password_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $confirm_password; ?>">
-            <span class="invalid-feedback"><?php echo $confirm_password_err; ?></span>
-        </div>
-        <div class="form-group">
-            <input type="submit" class="btn btn-primary" value="Submit">
-            <input type="reset" class="btn btn-secondary ml-2" value="Reset">
-        </div>
-        <p>Už máš účet?<a href="login.php"> Přihlaš se tady</a>.</p>
-    </form>
-</div>
+<section id="contact" class="contact">
 
+    <div class="container">
+        <div class="section-title">
+            <h2>Registrace uživatele</h2>
+            <p>Pro založení účtu vyplň prosím formulář níže.</p>
+        </div>
+
+        <div class="login-form">
+            <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post" class="php-email-form">
+                <div class="form-group mt-3">
+                    <label>Uživatelské jméno</label>
+                    <input id="subject" type="text" name="username" class="form-control <?php echo (!empty($username_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $username; ?>" required>
+                    <span class="invalid-feedback"><?php echo $username_err; ?></span>
+                </div>
+                <div class="form-group mt-3">
+                    <label>Heslo</label>
+                    <input type="password" name="password" class="form-control <?php echo (!empty($password_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $password; ?>" required>
+                    <span class="invalid-feedback"><?php echo $password_err; ?></span>
+                </div>
+                <div class="form-group mt-3">
+                    <label>Potvrď heslo</label>
+                    <input type="password" name="confirm_password" class="form-control <?php echo (!empty($confirm_password_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $confirm_password; ?>" required>
+                    <span class="invalid-feedback"><?php echo $confirm_password_err; ?></span>
+                </div>
+                <div class="text-center mb-2">
+                    <button type="submit" class="m-2" id="btn-login">Registrovat se</button>
+                </div>
+                <p>Už máš účet?<a href="login.php"> Přihlaš se tady</a>.</p>
+            </form>
+        </div>
+    </div>
+</section>
 
 
 <?php include "_partials/footer.php" ?>

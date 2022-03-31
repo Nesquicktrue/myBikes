@@ -1,4 +1,5 @@
 <?php include "_partials/header.php" ?>
+<?php include "_partials/check-login.php" ?>
 
 
 <?php

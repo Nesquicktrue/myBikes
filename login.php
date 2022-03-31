@@ -56,15 +56,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     if (mysqli_stmt_fetch($stmt)) {
                         if (password_verify($password, $hashed_password)) {
                             // Password is correct, so start a new session
-                            if(!isset($_SESSION)) 
-                            { 
-                                session_start(); 
-                            } 
-                                
-                                // Store data in session variables
-                                $_SESSION["loggedin"] = true;
-                                $_SESSION["id"] = $id;
-                                $_SESSION["username"] = $username;
+                            if (!isset($_SESSION)) {
+                                session_start();
+                            }
+
+                            // Store data in session variables
+                            $_SESSION["loggedin"] = true;
+                            $_SESSION["id"] = $id;
+                            $_SESSION["username"] = $username;
 
                             // Redirect user to welcome page
                             header("location: welcome.php");
@@ -91,33 +90,49 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 ?>
 
-<div class="container">
-    <h2>Login</h2>
-    <p>Vyplň prosím své přihlašovací údaje</p>
 
-    <?php
-    if (!empty($login_err)) {
-        echo '<div class="alert alert-danger">' . $login_err . '</div>';
-    }
-    ?>
 
-    <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
-        <div class="form-group">
-            <label>Uživatelské jméno</label>
-            <input type="text" name="username" class="form-control <?php echo (!empty($username_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $username; ?>">
-            <span class="invalid-feedback"><?php echo $username_err; ?></span>
+<!-- ======= Contact Section ======= -->
+<section id="contact" class="contact">
+    <div class="container">
+
+        <div class="section-title">
+            <h2>Přihlášení</h2>
+            <p>Vyplň níže svoje přihlašovací údaje. Pokud ještě nemáš svůj myBike účet, tak si ho můžeš
+                <a href="register.php">zaregistrovat.</a>
+            </p>
+            <p>Pokud jsi zapomněl heslo, tak mě prosím kontaktuj na mailu: nesquick.true@gmail.com. Automatická obnova hesla je zatím ve vývoji.</p>
         </div>
-        <div class="form-group">
-            <label>Heslo</label>
-            <input type="password" name="password" class="form-control <?php echo (!empty($password_err)) ? 'is-invalid' : ''; ?>">
-            <span class="invalid-feedback"><?php echo $password_err; ?></span>
+
+
+
+        <div class="login-form">
+            <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post" role="form" class="php-email-form">
+
+                <div class="form-group mt-3">
+                    <label>Uživatelské jméno</label>
+                    <input type="text" class="form-control" name="username" id="subject" <?php echo (!empty($username_err)) ? 'is-invalid' : ''; ?> value="<?php echo $username; ?>" required>
+                    <span class="invalid-feedback"><?php echo $username_err; ?></span>
+                </div>
+                <div class="form-group mt-3">
+                    <label>Heslo</label>
+                    <input type="password" name="password" class="form-control" name="message" <?php echo (!empty($password_err)) ? 'is-invalid' : ''; ?> required>
+                    <span class="invalid-feedback"><?php echo $password_err; ?></span>
+                </div>
+                <div class="my-3">
+                    <?php
+                    if (!empty($login_err)) {
+                        echo '<div class="error" style="background-color:red">' . $login_err . '</div>';
+                    }
+                    ?>
+                </div>
+                <div class="text-center mb-2"><button id="btn-login" type="submit">Přihlásit se</button></div>
+                <p>Ještě nemáš účet?<a href="register.php"> Registruj se tady</a>.</p>
+            </form>
         </div>
-        <div class="form-group">
-            <input type="submit" class="btn btn-primary" value="Login">
-        </div>
-        <p>Ještě nemáš účet?<a href="register.php">Registruj se tady</a>.</p>
-    </form>
-</div>
+
+    </div>
+</section><!-- End Contact Section -->
 
 
 

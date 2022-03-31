@@ -50,43 +50,34 @@ if (!isset($_SESSION)) {
             <li><a class="nav-link" href="login.php">Přihlásit</a></li>
             <li><a class="nav-link" href="register.php">Registrovat</a></li>';
           } else {
-
-
             echo '
-    <li><a class="nav-link" href="mapa.php">Mapa</a></li>
-    <li><a class="nav-link" href="vypis.php">Výpis komponent</a></li>
-    <li><a class="nav-link" href="servis.php">Servisní úkony</a></li>
-    <li class="dropdown"><a href="#"><span>Moje kola</span> <i class="bi bi-chevron-down"></i></a>
-    <ul>
-    <li><a href="#">Bajk 1</a></li>
-    <li><a href="#">Bajk 2</a></li>
-    <li><a href="#">Bajk 3</a></li>
-    </ul>
-    <li class="dropdown"><a href="#"><span>Můj účet</span> <i class="bi bi-chevron-down"></i></a>
-    <ul>
-    <li><a href="welcome.php">Moje info</a></li>
-    <li><a href="#">Odhlásit</a></li>
-    </li>
-    </ul>
-    </li>';
+            <ul>
+            <li><a class="nav-link" href="mapa.php">Mapa</a></li>
+            <li><a class="nav-link" href="vypis.php">Výpis komponent</a></li>
+            <li><a class="nav-link" href="servis.php">Servisní úkony</a></li>
+            <li class="dropdown"><a href="#"><span>Můj účet</span> <i class="bi bi-chevron-down"></i></a>
+              <ul>
+                <li><a href="welcome.php">Moje info</a></li>
+                <li class="dropdown"><a href="#"><span>Moje kola</span> <i class="bi bi-chevron-right"></i></a>
+                  <ul>
+                    <li><a href="#">Bajk 1</a></li>
+                    <li><a href="#">Bajk 2</a></li>
+                    <li><a href="#">Bajk 3</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+          </ul>
+            ';
           }
           ?>
-        </ul>
-        <i class="bi bi-list mobile-nav-toggle"></i>
+          <i class="bi bi-list mobile-nav-toggle"></i>
       </nav>
 
     </div>
   </header>
 
-  <section id="hero" class="d-flex align-items-center justify-content-center">
-    <div class="container position-relative">
-      <h1>Vítejte v myBike!</h1>
-      <h2>Webové aplikaci, kde si evidujete stav svých bajků.</h2>
-      <a href="login.php" class="btn-get-started">Přihlásit se</a>
-    </div>
-  </section><!-- End Hero -->
+<div style="padding:60px">
+</div>
 
-
-
-  <main id="main">
-    <div class="container">
+<main id="main">
