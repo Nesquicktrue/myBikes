@@ -4,9 +4,10 @@
 
 	$id = $database->update('components', [
         'model'  => $_POST['model'],
-        'vyrobce'  => $_POST['vyrobce']
+        'manufacturer'  => $_POST['manufacturer']
     ],[
         'type'  => $_POST['type'],
+        'bike_id'  => $_POST['bike_id'],
     ]);
 
 	// success

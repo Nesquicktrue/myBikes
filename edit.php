@@ -19,7 +19,7 @@ $model = $sloupce[0]['model'];
 $nazev = $sloupce[0]['nazev'];
 
 
-include_once "_partials/header-min.php";
+include_once "_partials/header.php";
 
 ?>
 <div class="container">

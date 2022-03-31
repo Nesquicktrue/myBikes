@@ -1,8 +1,9 @@
-<?php include "_partials/header.php" ?>
+<?php include "_partials/header-login.php" ?>
 
-
-<div class="page-header">
-    <h1>Přihlásit</h1>
+<div class="container">
+    INDEX
 </div>
+
+
 
 <?php include "_partials/footer.php" ?>

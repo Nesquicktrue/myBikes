@@ -1,4 +1,4 @@
-<?php include "_partials/header-min.php" ?>
+<?php include "_partials/header.php" ?>
 
 
 <div class="page-header">

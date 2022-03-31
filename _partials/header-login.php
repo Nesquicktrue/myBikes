@@ -1,17 +1,9 @@
-<?php require '_inc/login-conf.php' ?>
+<?php require '_inc/config.php' ?>
 
 <?php
-
 if (!isset($_SESSION)) {
   session_start();
 }
-
-// Check if the user is logged in, if not then redirect him to login page
-if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
-  header("location: login.php");
-  exit;
-}
-
 ?>
 
 <!DOCTYPE html>
@@ -41,8 +33,6 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
 
   <link rel="stylesheet" href="assets/css/style.css">
 
-
-
 </head>
 
 <body>
@@ -53,22 +43,34 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
 
       <nav id="navbar" class="navbar">
         <ul>
-          <li><a class="nav-link scrollto active" href="index.php">Domů</a></li>
-          <li><a class="nav-link" href="mapa.php">Mapa</a></li>
-          <li><a class="nav-link" href="vypis.php">Výpis komponent</a></li>
-          <li><a class="nav-link" href="servis.php">Servisní úkony</a></li>
-          <li class="dropdown"><a href="#"><span>Můj účet</span> <i class="bi bi-chevron-down"></i></a>
-            <ul>
-              <li><a href="welcome.php">Moje info</a></li>
-              <li class="dropdown"><a href="#"><span>Moje kola</span> <i class="bi bi-chevron-right"></i></a>
-                <ul>
-                  <li><a href="#">Bajk 1</a></li>
-                  <li><a href="#">Bajk 2</a></li>
-                  <li><a href="#">Bajk 3</a></li>
-                </ul>
-              </li>
-            </ul>
-          </li>
+          <li><a class="nav-link" href="index.php">Domů</a></li>
+          <?php
+          if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
+            echo '
+            <li><a class="nav-link" href="login.php">Přihlásit</a></li>
+            <li><a class="nav-link" href="register.php">Registrovat</a></li>';
+          } else {
+
+
+            echo '
+    <li><a class="nav-link" href="mapa.php">Mapa</a></li>
+    <li><a class="nav-link" href="vypis.php">Výpis komponent</a></li>
+    <li><a class="nav-link" href="servis.php">Servisní úkony</a></li>
+    <li class="dropdown"><a href="#"><span>Moje kola</span> <i class="bi bi-chevron-down"></i></a>
+    <ul>
+    <li><a href="#">Bajk 1</a></li>
+    <li><a href="#">Bajk 2</a></li>
+    <li><a href="#">Bajk 3</a></li>
+    </ul>
+    <li class="dropdown"><a href="#"><span>Můj účet</span> <i class="bi bi-chevron-down"></i></a>
+    <ul>
+    <li><a href="welcome.php">Moje info</a></li>
+    <li><a href="#">Odhlásit</a></li>
+    </li>
+    </ul>
+    </li>';
+          }
+          ?>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav>
@@ -76,7 +78,15 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
     </div>
   </header>
 
-  
+  <section id="hero" class="d-flex align-items-center justify-content-center">
+    <div class="container position-relative">
+      <h1>Vítejte v myBike!</h1>
+      <h2>Webové aplikaci, kde si evidujete stav svých bajků.</h2>
+      <a href="login.php" class="btn-get-started">Přihlásit se</a>
+    </div>
+  </section><!-- End Hero -->
+
+
+
   <main id="main">
-  <br><br><br><br>
     <div class="container">
