@@ -79,11 +79,11 @@ foreach ($user_bikes as $bike) {
 <div class="container formular">
     <form id="pridatKomponentuForm" action="_inc/new-bike.php" method="POST">
 
-        <select class="form-select my-1" aria-label="Default select example" name="b_type">
-            <option>ht</option>
-            <option>full</option>
-            <option>gravel</option>
-            <option>silnice</option>
+        <select class="form-select my-1" aria-label="bike select" name="b_type">
+            <option value="ht">Hardtail (pouze přední odpružení)</option>
+            <option value="full">Celoodpružené</option>
+            <option value="gravel">Gravel</option>
+            <option value="silnice">Silniční kolo</option>
         </select>
 
         <div class="row">

@@ -32,6 +32,7 @@
 <script src="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/js/select2.full.min.js"></script>
 <script src="assets/js/jquery.maphilight.min.js"></script>
 <script src="assets/js/imageMapResizer.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
 
 <script src="assets/js/app.js"></script>
 <script src="assets/js/main.js"></script>

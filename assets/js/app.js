@@ -1,10 +1,11 @@
 (function ($) {
-
-    $("select").select2({
+    
+    // Select2 s filtrem a multiple options
+    $(".comp_select").select2({
         theme: "bootstrap-5", placeholder: "Vyber komponentu...",
         // allowClear: true
     });
-
+    
     // Smazat kolo modal potvrzení
     $('.smazat-link').click((el)=>{
         console.log(el)
@@ -13,10 +14,15 @@
         $('#delBtn').click(()=>{
             window.location = '_inc/delete-bike.php?id=' + el.currentTarget.attributes[1].value;
         })
-
+        
     })
-
     
+    // Tooltip tabulky komponent
+    $(document).ready(function(){
+        $('[data-toggle="tooltip"]').tooltip();
+    });
+    
+
 
     // AJAX pro pridani
     /*     const pridatKomponentuForm = $('#pridatKomponentuForm');

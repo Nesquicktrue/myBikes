@@ -22,10 +22,9 @@
 			</div>
 		</div>
 		
-		<select class="form-select my-1" name="type" multiple="multiple">
-			<?php foreach ($data as $item) {
-				echo '<option value="' . $item['type'] . '">' . $item['comname'] . '</option>';
-			};
+		<select class="form-select my-1 comp_select" name="type" multiple="multiple">
+			<?php 
+				include "_partials/components.php"
 			?>
 		</select>
 
