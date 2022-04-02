@@ -1,4 +1,4 @@
-<?php require '_inc/config.php' ?>
+<?php require_once '_inc/config.php' ?>
 
 <?php
 if (!isset($_SESSION)) {
@@ -58,13 +58,8 @@ if (!isset($_SESSION)) {
             <li class="dropdown"><a href="#"><span>Můj účet</span> <i class="bi bi-chevron-down"></i></a>
               <ul>
                 <li><a href="welcome.php">Moje info</a></li>
-                <li class="dropdown"><a href="#"><span>Moje kola</span> <i class="bi bi-chevron-right"></i></a>
-                  <ul>
-                    <li><a href="#">Bajk 1</a></li>
-                    <li><a href="#">Bajk 2</a></li>
-                    <li><a href="#">Bajk 3</a></li>
-                  </ul>
-                </li>
+                <li><a href="bikes.php">Moje kola</a></li>
+                <li><a href="_inc/logout.php">Odhlásit se</a></li>
               </ul>
             </li>
           </ul>

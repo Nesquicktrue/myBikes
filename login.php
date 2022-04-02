@@ -15,6 +15,7 @@ if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true) {
 $username = $password = "";
 $username_err = $password_err = $login_err = "";
 
+
 // Processing form data when form is submitted
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
@@ -105,6 +106,23 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         </div>
 
 
+        <?php
+        // Přicházím z registrace? Ano -> doplň uživatelské jméno a hlášku
+        if (isset($_GET['status'])) {
+            switch ($_GET['status']) {
+                case 'ok':
+                    echo '<div class="registration_message">
+                            Registrace proběhla v pořádku, nyní se můžeš přihlásit
+                            </div>';
+                    if (isset($_GET['user'])) {
+                        $username = $_GET['user'];
+                    }
+                    // prostor pro další statusy
+                default:
+                    break;
+            }
+        }
+        ?>
 
         <div class="login-form">
             <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post" role="form" class="php-email-form">
@@ -116,17 +134,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 </div>
                 <div class="form-group mt-3">
                     <label>Heslo</label>
-                    <input type="password" name="password" class="form-control" name="message" <?php echo (!empty($password_err)) ? 'is-invalid' : ''; ?> required>
+                    <input type="password" name="password" class="form-control" <?php echo (!empty($password_err)) ? 'is-invalid' : ''; ?> required>
                     <span class="invalid-feedback"><?php echo $password_err; ?></span>
                 </div>
                 <div class="my-3">
                     <?php
                     if (!empty($login_err)) {
-                        echo '<div class="error" style="background-color:red">' . $login_err . '</div>';
+                        echo '<div class="invalid" style="background-color:#e46363;color:#fff;text-align:center">' . $login_err . '</div>';
                     }
                     ?>
                 </div>
-                <div class="text-center mb-2"><button id="btn-login" type="submit">Přihlásit se</button></div>
+                <div class="text-center mb-2">
+                    <button id="btn-login" type="submit">Přihlásit se</button>
+                </div>
                 <p>Ještě nemáš účet?<a href="register.php"> Registruj se tady</a>.</p>
             </form>
         </div>

@@ -12,7 +12,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (empty(trim($_POST["username"]))) {
         $username_err = "Prosím zadejte uživatelské jméno";
     } elseif (!preg_match('/^[a-zA-Z0-9_]+$/', trim($_POST["username"]))) {
-        $username_err = "Uživaterlské jméno může obsahovat pouze písmena, číslice a podtržítko";
+        $username_err = "Uživatelské jméno může obsahovat pouze písmena, číslice a podtržítko";
     } else {
         // Prepare a select statement
         $sql = "SELECT id FROM users WHERE username = ?";
@@ -35,7 +35,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     $username = trim($_POST["username"]);
                 }
             } else {
-                echo "Shit! Něco se nepovedlo, zkusíš to znovu?";
+                echo ":-( Něco se nepovedlo, zkusíš to znovu?";
             }
 
             // Close statement
@@ -79,9 +79,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             // Attempt to execute the prepared statement
             if (mysqli_stmt_execute($stmt)) {
                 // Redirect to login page
-                header("location: login.php");
+                header("location: login.php?status=ok&user=$username");
             } else {
-                echo "Shit! Něco se nepovedlo, zkusíš to znovu?";
+                echo ":-( Něco se nepovedlo, zkusíš to znovu?";
             }
 
             // Close statement

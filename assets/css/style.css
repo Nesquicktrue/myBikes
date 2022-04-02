@@ -26,6 +26,21 @@ h1, h2, h3, h4, h5, h6 {
   justify-content: center;
 }
 
+.registration_message {
+  color: #fff;
+  background: #18d26e;
+  text-align: center;
+  padding: 15px;
+  font-weight: 600;
+}
+
+.invalid-feedback {
+  color: #fff;
+  background: #e46363;
+  text-align: center;
+  padding: 15px;
+  font-weight: 600;
+}
 
 /*--------------------------------------------------------------
 # Back to top button

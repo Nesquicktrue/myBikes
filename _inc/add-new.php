@@ -11,5 +11,6 @@
 
 	// success
 	if ( $id ) {
+		header("Location: ../bikes.php?status=addok");
 		die("Přidáno");
 	}

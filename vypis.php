@@ -6,9 +6,18 @@
     <h1>Výpis komponent</h1>
 </div>
 
-<?php $data = $database->select('components',
+<?php 
+        echo 'Session: <br>';
+        print_r($_SESSION);
+        
+        echo '<br>user_bikes: <br>';
+        $user_bikes = $database->select('bikes','id',['user_id'=>$_SESSION["id"]]);
+        print_r($user_bikes);
+
+        $data = $database->select('components',
                                 ['comname', 'manufacturer', 'model', 'type'],
-                                ['bike_id'=>1]);
+                                ['bike_id'=>$user_bikes]
+                            );
 
 echo    '<table class="table table-striped">
                 <thead>
@@ -36,7 +45,7 @@ echo        '</tbody> </table>';
 
 <div class="d-flex justify-content-evenly">
     <button href="#" class="btn btn-outline-primary">Export do PDF</button>
-    <button href="" class="btn btn-outline-primary">Export do CSV</button>
+    <button href="#" class="btn btn-outline-primary">Export do CSV</button>
 </div>
 <hr>
 <h2> Změnit / Přidat komponentu </h2>
