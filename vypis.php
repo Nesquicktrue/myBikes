@@ -8,92 +8,84 @@
 
 <?php
 
-$user_bikes = $database->select('bikes', 'id', ['user_id' => $_SESSION["id"]]);
+$user_bikes = $database->select('bikes', ['id','manufacturer','year'], ['user_id' => $_SESSION["id"]]);
 
+// připravuji array pro SQL dotaz na komponenty
+$bikesID = array();
+foreach ($user_bikes as $item) {
+    array_push($bikesID, $item['id']);
+};
+
+// načítám všechny komponenty
 $data = $database->select(
     'components',
     ['comname', 'manufacturer', 'model', 'type', 'id', 'bike_id'],
-    ['bike_id' => $user_bikes]
+    ['bike_id' => $bikesID ]
 );
 
+/* Predání array do JS components.js */
 echo '<script>
-        let compArray = '.
-        json_encode($data)
-        .'</script>';
-    
-// vyber kolo
-
-
-
-
-
-// tabulka komponent
-echo    '
-        <div class="container-xl">
-            <div class="table-responsive">
-                <div class="table-wrapper">
-                    <div class="table-title">
-                        <div class="row">
-                            <div class="col-sm-8">Tabulka komponent</h2></div>
-                            <div class="col-sm-4">
-                                <div class="search-box">
-                                    <i class="material-icons">&#xE8B6;</i>
-                                    <input type="text" class="form-control" placeholder="Hledej...">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <table class="table table-striped table-hover table-bordered">
-                        <thead>
-                            <tr>
-                                <th>Typ <i class="fa fa-sort"></i></th>
-                                <th>Výrobce</th>
-                                <th>Popis <i class="fa fa-sort"></i></th>
-                                <th>Akce</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-';
-
-foreach ($data as $item) {
-    echo    '<tr>
-                   <td>' . $item["comname"] . '</td>
-                   <td>' . $item["manufacturer"] . '</td>
-                   <td>' . $item["model"] . '</td>
-                   <td>
-                   <a href="#" class="view" title="Info" data-toggle="tooltip"><i class="material-icons">&#xE417;</i></a>
-                   <a href="edit.php?id=' . $item["id"] . '" class="edit" title="Uprav" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
-                   <a href="#" class="delete" title="Smaz" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a>
-                   </td>
-            </tr>';
-};
-
-echo        '</tbody> </table>';
+        let bikeArray = ' . json_encode($user_bikes) . '
+        let compArray = ' . json_encode($data) . '</script>';
 
 ?>
 
+<!-- vyber kolo - doplnuje JS components.js -->
+<div class="d-flex justify-content-center align-items-center vyber-kolo gap-2">
+    Vybrané kolo:
+    <select id="selectBikes" style="width: 10rem;"></select>
+</div>
+
+
+<!-- tabulka komponent -->
+<input id="filtr" type="text" class="form-control mb-1 mt-4" placeholder="Hledej v seznamu komponent...">
+<table class="table table-hover m-0 mb-2">
+    <thead>
+        <th scope="col" style="width: 10%" class="vybrano" data-colname="nazev" data-order="desc">Typ </th>
+        <th scope="col" style="width: 15%" class="" data-colname="autor" data-order="desc">Výrobce </th>
+        <th scope="col" style="width: 60%" class="" data-colname="rating" data-order="desc">Popis </th>
+        <th scope="col" style="width: 15%" class="" data-colname="akce" data-order="desc">Akce </th>
+    </thead>
+    <tbody id="compTabBody">
+
+    </tbody>
+</table>
+
+
 <!-- Exporty -->
 
-<div class="d-flex justify-content-evenly">
-    <button href="#" class="btn btn-outline-primary">Export do PDF</button>
-    <button href="#" class="btn btn-outline-primary">Export do CSV</button>
+<div class="d-flex justify-content-end gap-2">
+    <button href="#" class="btn btn-outline-warning">Export do PDF</button>
+    <button href="#" class="btn btn-outline-warning">Export do CSV</button>
 </div>
 <hr>
 
 <!-- Formulář pro nové komponenty -->
 
-<h2> Změnit / Přidat komponentu </h2>
+<h2> Přidat novou komponentu </h2>
 <br>
 
 <div class="container formular">
     <form id="pridatKomponentuForm" action="_inc/new-comp.php" method="POST">
 
-        <select class="form-select my-1 comp_select" aria-label="Default select example" name="type">
+        <select class="form-select my-1" name="bike_id" id="selectBikeForComp">
+            <?php
+            foreach ($user_bikes as $bike) {
+                echo '<option value="' . $bike['id'] . '" >' . $bike['manufacturer'] . ' ' . $bike['year'] . '</option>';
+            };
+            ?>
+        </select>
+
+       <!--  schovaný input kvůli názvu COMNAME komponenty, kterou potřebuji z <option> -->
+        <input id="make_text" type = "hidden" name = "comname" value = "" >
+
+        <select class="form-select my-1 comp_select" aria-label="Default select example" name="type" onchange="setTextField(this)">
             <option>Hledej komponentu ↓</option>
             <?php
             include "_partials/components.php"
             ?>
         </select>
+
         <div class="col-auto">
             <input type="text" placeholder="Výrobce..." id="manufacturer" class="my-1 form-control" name="manufacturer">
         </div>
@@ -103,11 +95,13 @@ echo        '</tbody> </table>';
                 <textarea type="text" class="form-control input-popis" rows="3" id="popis" name="model" placeholder="Popis..."></textarea>
             </div>
         </div>
+
         <button type="submit" class="btn btn-danger my-2">Uložit</button>
+
     </form>
 </div>
 </div>
 <section></section>
 
-<script src="assets/js/components.js"></script>
-<?php include "_partials/footer.php" ?>
+
+<?php include "_partials/footer-vypis.php" ?>

@@ -2,11 +2,12 @@
 
 	require 'config.php';
 
-	$id = $database->update('components', [
-        'model'  => $_POST['model'],
-        'vyrobce'  => $_POST['vyrobce']
-    ],[
+	$id = $database->insert('components', [
         'type'  => $_POST['type'],
+        'manufacturer'  => $_POST['manufacturer'],
+        'model'  => $_POST['model'],
+        'comname'  => $_POST['comname'],
+        'bike_id'  => $_POST['bike_id']
     ]);
 
 	// success
