@@ -6,12 +6,11 @@
         'model'  => $_POST['model'],
         'manufacturer'  => $_POST['manufacturer']
     ],[
-        'type'  => $_POST['type'],
-        'bike_id'  => $_POST['bike_id'],
+        'id'  => $_POST['id'],
     ]);
 
 	// success
 	if ( $id ) {
-		header("Location: ../index.php");
+		header("Location: ../vypis.php");
 		die();
 	}

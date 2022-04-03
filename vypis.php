@@ -8,7 +8,7 @@
 
 <?php
 
-$user_bikes = $database->select('bikes', ['id','manufacturer','year'], ['user_id' => $_SESSION["id"]]);
+$user_bikes = $database->select('bikes', ['id', 'manufacturer', 'year'], ['user_id' => $_SESSION["id"]]);
 
 // připravuji array pro SQL dotaz na komponenty
 $bikesID = array();
@@ -20,7 +20,7 @@ foreach ($user_bikes as $item) {
 $data = $database->select(
     'components',
     ['comname', 'manufacturer', 'model', 'type', 'id', 'bike_id'],
-    ['bike_id' => $bikesID ]
+    ['bike_id' => $bikesID]
 );
 
 /* Predání array do JS components.js */
@@ -41,10 +41,10 @@ echo '<script>
 <input id="filtr" type="text" class="form-control mb-1 mt-4" placeholder="Hledej v seznamu komponent...">
 <table class="table table-hover m-0 mb-2">
     <thead>
-        <th scope="col" style="width: 10%" class="vybrano" data-colname="nazev" data-order="desc">Typ </th>
-        <th scope="col" style="width: 15%" class="" data-colname="autor" data-order="desc">Výrobce </th>
-        <th scope="col" style="width: 60%" class="" data-colname="rating" data-order="desc">Popis </th>
-        <th scope="col" style="width: 15%" class="" data-colname="akce" data-order="desc">Akce </th>
+        <th scope="col" style="width: 10%" class="vybrano" >Typ </th>
+        <th scope="col" style="width: 15%" class="">Výrobce </th>
+        <th scope="col" style="width: 70%" class="">Popis </th>
+        <th scope="col" style="width: 5%" class="">Detail </th>
     </thead>
     <tbody id="compTabBody">
 
@@ -76,8 +76,8 @@ echo '<script>
             ?>
         </select>
 
-       <!--  schovaný input kvůli názvu COMNAME komponenty, kterou potřebuji z <option> -->
-        <input id="make_text" type = "hidden" name = "comname" value = "" >
+        <!--  schovaný input kvůli názvu COMNAME komponenty, kterou potřebuji z <option> -->
+        <input id="make_text" type="hidden" name="comname" value="">
 
         <select class="form-select my-1 comp_select" aria-label="Default select example" name="type" onchange="setTextField(this)">
             <option>Hledej komponentu ↓</option>
@@ -100,6 +100,17 @@ echo '<script>
 
     </form>
 </div>
+
+<!-- Modal INFO-->
+<div class="modal fade" id="CompModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content" id="titMod">
+            <!-- show-modal.php -->
+        </div>
+    </div>
+</div>
+
+
 </div>
 <section></section>
 

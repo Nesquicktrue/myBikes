@@ -7,11 +7,13 @@ let filteredComp = compArray;
 
 $('#compTabBody').html(getTableBody(filteredComp))
 $('#selectBikes').html(getMyBikes())
+pridejListenerPart()
+
 
 $('#selectBikes').on('change', () => {
     vybranyBike = $('#selectBikes').val(); // Měním hodnotu i spodního selectu pro nové komponenty
-    $("#filtr").val(''); //vymaz pole filtru
     $("#selectBikeForComp").val(vybranyBike).change();
+    $("#filtr").val(''); // vymaz pole filtru
     filteredComp = [];
     compArray.forEach((item) => {
         if (item.bike_id == vybranyBike || vybranyBike == 'all') {
@@ -19,6 +21,7 @@ $('#selectBikes').on('change', () => {
         }
     })
     $('#compTabBody').html(getTableBody(filteredComp));
+    pridejListenerPart()
 })
 
 // Naplňuji select koly uživatele
@@ -47,20 +50,20 @@ function getTableBody(filtr) {
         }</td><td>${
             item.model
         }</td><td>
-        <a href="#" class="view" title="View" data-toggle="tooltip"><i class="material-icons">&#xE417;</i></a>
-        <a href="#" class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
-        <a href="#" class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a>
+        <a class="part view" id="${
+            item.id
+        }" title="Zobrazit detail"><i class="material-icons">&#xE417;</i></a>
         </td></tr>`;
     })
     return tableBody
 }
 
-// ------------- Filtrování komponent v tabulce -------------
-
+// Filtrování komponent v tabulce
 $("#filtr").on("keyup", () => {
     let filtrUdaj = $("#filtr").val();
     let data = filtrujTabulku(filtrUdaj, filteredComp);
     $('#compTabBody').html(getTableBody(data))
+    pridejListenerPart()
 })
 
 function filtrujTabulku(filtrUdaj, pole) {
@@ -81,4 +84,25 @@ function filtrujTabulku(filtrUdaj, pole) {
 // získávám i název z <option> jako COMPNAME do hidden inputu
 function setTextField(ddl) {
     document.getElementById('make_text').value = ddl.options[ddl.selectedIndex].text;
+}
+// listener pro detail komponenty z tabulky, obnovuji kvůli filtrům
+function pridejListenerPart() {
+    $('.part').on('click', (el) => {
+        let comp = el.currentTarget.id;
+
+        let req = $.ajax({
+            url: '_inc/show-modal.php',
+            type: 'GET',
+            data: 'type=' + comp,
+            success: (res) => {
+                $("#titMod").html(res);
+                $("#CompModal").modal('show');
+            }
+        });
+
+        req.done((data) => {
+            console.log(data);
+        });
+
+    })
 }

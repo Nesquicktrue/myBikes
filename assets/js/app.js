@@ -16,11 +16,18 @@
         })
         
     })
+
+    // Smazat komponentu modal potvrzení
+    $('.smazat').click((el)=>{
+        console.log(el)
+        //let mazaneKolo = el.currentTarget.parentElement.children[0].innerText;
+        //$('#deleteModalBody').text("Opravdu smazat kolo " + mazaneKolo + "?");
+        //$('#delBtn').click(()=>{
+          //  window.location = '_inc/delete-bike.php?id=' + el.currentTarget.attributes[1].value;
+        //})
+        
+    })
     
-    // Tooltip tabulky komponent
-    $(document).ready(function(){
-        $('[data-toggle="tooltip"]').tooltip();
-    });
     
 
 
@@ -45,9 +52,10 @@
     });
 
     // Predani dat z mapy do modalu
-    $(document).ready(() => {
-        $(".part").click((e) => {
+   /* 
+        $(".part").on('click',(e) => {
             let comp = e.currentTarget.id;
+            console.log('clikc')
             console.log(comp);
 
             let req = $.ajax({
@@ -63,9 +71,9 @@
             req.done((data) => {
                 console.log(data);
             });
-        });
+        }); */
 
         /* $('#CompModal').modal('show').attr('data-js',comp); */
-    });
+    
 
 }(jQuery));
