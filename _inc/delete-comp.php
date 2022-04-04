@@ -28,4 +28,7 @@ $comp = $database->delete('components', ['id' => $_GET['id']]);
 if ($comp) {
 	header("Location: ../vypis.php");
 	die();
+} else {
+	header("Location: ../404.php");
+	die();
 }

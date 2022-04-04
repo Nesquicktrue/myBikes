@@ -15,4 +15,7 @@
 	if ( $id ) {
 		header("Location: ../bikes.php?status=addok");
 		die();
+	} else {
+		header("Location: ../404.php");
+		die();
 	}

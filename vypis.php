@@ -64,17 +64,6 @@ echo '<script>
 </div>
 <hr>
 
-<!-- Mapa kola -->
-<h2>Mapa kola - rozpracováno</h2>
-<p>Zde se po kliknutí na komponentu otevře stejný modal jako z tabulky</p>
-<div class="d-flex justify-content-center my-4">
-    <img src="assets/img/ht.jpeg" class="map img-fluid" usemap="#bikemap" 
-        data-maphilight='{"strokeColor":"D4D2D1","strokeWidth":5,"fillColor":"ff0000","fillOpacity":0.6}'>
-    <map name="bikemap">
-        <?php include "_partials/maps.php" ?>
-    </map>
-</div>
-
 
 <!-- Formulář pro nové komponenty -->
 <h2> Přidat novou komponentu </h2>
@@ -82,7 +71,7 @@ echo '<script>
 
 <div class="container formular">
     <form id="pridatKomponentuForm" action="_inc/new-comp.php" method="POST">
-
+        
         <select class="form-select my-1" name="bike_id" id="selectBikeForComp">
             <?php
             foreach ($user_bikes as $bike) {
@@ -90,30 +79,43 @@ echo '<script>
             };
             ?>
         </select>
-
+        
         <!--  schovaný input kvůli názvu COMNAME komponenty, kterou potřebuji z <option> -->
-        <input id="make_text" type="hidden" name="comname" value="">
-
-        <select class="form-select my-1 comp_select" aria-label="Default select example" name="type" onchange="setTextField(this)">
-            <option>Hledej komponentu ↓</option>
-            <?php
+            <input id="make_text" type="hidden" name="comname" value="">
+            
+            <select class="form-select my-1 comp_select" aria-label="Default select example" name="type" onchange="setTextField(this)">
+                <option>Hledej komponentu ↓</option>
+                <?php
             include "_partials/components.php"
             ?>
         </select>
-
+        
         <div class="col-auto">
             <input type="text" placeholder="Výrobce..." id="manufacturer" class="my-1 form-control" name="manufacturer">
         </div>
-
+        
         <div class="row my-1">
             <div class="col">
                 <textarea type="text" class="form-control input-popis" rows="3" id="popis" name="model" placeholder="Popis..."></textarea>
             </div>
         </div>
-
+        
         <button type="submit" class="btn btn-danger my-2">Uložit</button>
-
+        
     </form>
+</div>
+<hr>
+
+<!-- Mapa kola -->
+<h2>Mapa kola - rozpracováno</h2>
+<p>Ve finální verzi se zde po kliknutí na komponentu otevře stejný modal jako z tabulky</p>
+<p>Silueta kola se bude měnit dle vybraného typu kola HT/FULL/Gravel/Silnice</p>
+<div class="d-flex justify-content-center my-4">
+    <img src="assets/img/ht.jpeg" class="map img-fluid" usemap="#bikemap" 
+        data-maphilight='{"strokeColor":"D4D2D1","strokeWidth":5,"fillColor":"ff0000","fillOpacity":0.6}'>
+    <map name="bikemap">
+        <?php include "_partials/maps.php" ?>
+    </map>
 </div>
 
 <!-- Modal INFO-->

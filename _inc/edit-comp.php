@@ -13,4 +13,7 @@
 	if ( $id ) {
 		header("Location: ../vypis.php");
 		die();
+	} else {
+		header("Location: ../404.php");
+		die();
 	}

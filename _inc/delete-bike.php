@@ -26,4 +26,7 @@ $bikeid = $database->delete('bikes', ['id' => $_GET['id']]);
 if ($bikeid && $comp) {
 	header("Location: ../bikes.php?status=delok");
 	die();
+} else {
+	header("Location: ../404.php");
+	die();
 }

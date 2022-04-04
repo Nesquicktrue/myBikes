@@ -53,13 +53,12 @@ if (!isset($_SESSION)) {
           } else {
             echo '
             <ul>
-            <li><a class="nav-link" href="mapa.php">Mapa</a></li>
             <li><a class="nav-link" href="vypis.php">Výpis komponent</a></li>
             <li><a class="nav-link" href="servis.php">Servisní úkony</a></li>
+            <li><a href="bikes.php">Moje kola</a></li>
             <li class="dropdown"><a href="#"><span>Můj účet</span> <i class="bi bi-chevron-down"></i></a>
               <ul>
                 <li><a href="welcome.php">Moje info</a></li>
-                <li><a href="bikes.php">Moje kola</a></li>
                 <li><a href="_inc/logout.php">Odhlásit se</a></li>
               </ul>
             </li>
