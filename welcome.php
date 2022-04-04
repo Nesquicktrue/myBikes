@@ -17,11 +17,7 @@ if(!isset($_SESSION))
         <a href="reset-password.php" class="btn btn-warning">Změna hesla</a>
         <a href="_inc/logout.php" class="btn btn-danger ml-3">Odhlásit se</a>
     </p>
-    <p>
-        <?php
-        print_r($_SESSION);
-        ?>
-    </p>
+  
 
 
 

@@ -38,7 +38,11 @@ echo '<script>
 
 
 <!-- tabulka komponent -->
-<input id="filtr" type="text" class="form-control mb-1 mt-4" placeholder="Hledej v seznamu komponent...">
+<div class="d-flex align-items-center mt-4 mb-1">
+<i class="material-icons">search</i>
+<input id="filtr" type="text" class="form-control" placeholder="Hledej v seznamu komponent...">
+</div>
+
 <table class="table table-hover m-0 mb-2">
     <thead>
         <th scope="col" style="width: 10%" class="vybrano" >Typ </th>
@@ -53,15 +57,26 @@ echo '<script>
 
 
 <!-- Exporty -->
-
-<div class="d-flex justify-content-end gap-2">
+<div class="d-flex justify-content-end gap-2 align-items-center">
+    <h6>Exporty jsou nyní vypnuty</h6>
     <button href="#" class="btn btn-outline-warning">Export do PDF</button>
     <button href="#" class="btn btn-outline-warning">Export do CSV</button>
 </div>
 <hr>
 
-<!-- Formulář pro nové komponenty -->
+<!-- Mapa kola -->
+<h2>Mapa kola - rozpracováno</h2>
+<p>Zde se po kliknutí na komponentu otevře stejný modal jako z tabulky</p>
+<div class="d-flex justify-content-center my-4">
+    <img src="assets/img/ht.jpeg" class="map img-fluid" usemap="#bikemap" 
+        data-maphilight='{"strokeColor":"D4D2D1","strokeWidth":5,"fillColor":"ff0000","fillOpacity":0.6}'>
+    <map name="bikemap">
+        <?php include "_partials/maps.php" ?>
+    </map>
+</div>
 
+
+<!-- Formulář pro nové komponenty -->
 <h2> Přidat novou komponentu </h2>
 <br>
 

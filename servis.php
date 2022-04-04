@@ -4,21 +4,32 @@
 
 
 <div class="page-header">
-	<h1>Servisní úkony</h1>
+	<h1>Servisní úkony - TATO FUNKCE JE PROZATÍM NEDOSTUPNÁ</h1>
 </div>
 
-<?php $data = $database->select('components', ['comname', 'manufacturer', 'model', 'type']);
+<?php
+
+$user_bikes = $database->select('bikes',['id','manufacturer','year'],
+			['user_id' => $_SESSION['id']]
+);
+// $data = $database->select('components', ['comname', 'manufacturer', 'model', 'type'],
+
+//);
 ?>
+<div class="d-flex justify-content-center align-items-center vyber-kolo gap-2">
+    Vybrané kolo:
+    <select id="selectBikes" style="width: 10rem;"></select>
+</div>
 
 <div class="container formular">
-	<form id="pridatKomponentuForm" action="_inc/new-comp.php" method="POST">
+	<form id="pridatKomponentuForm" action="_inc/new-service.php" method="POST">
 
-		<div class="row">
+		<div class="d-flex justify-content-start align-items-center">
 			<div class="col-2">
 				Datum úkonu:
 			</div>
 			<div class="col-3">
-				<input type="date" placeholder="" id="vyrobce" class="my-1 form-control" name="vyrobce">
+				<input type="date" placeholder="" id="date" class="my-1 form-control" name="date" required>
 			</div>
 		</div>
 		
@@ -31,10 +42,11 @@
 
 		<div class="row my-1">
 			<div class="col">
-				<textarea type="text" class="form-control input-popis" rows="3" id="popis" name="model" placeholder="Popis..."></textarea>
+				<textarea type="text" class="form-control input-popis" rows="3" id="popis" name="desc" placeholder="Popis..." required></textarea>
 			</div>
 		</div>
-		<button type="submit" class="btn btn-danger my-2">Uložit</button>
+		<input type="number form-control m-1" name="price" placeholder="Přibližná cena..."> 
+		<button type="submit" class="btn btn-danger my-2" disabled>Založit</button>
 	</form>
 </div>
 </div>

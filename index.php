@@ -1,7 +1,8 @@
 <?php include "_partials/header.php" ?>
 
 <div class="container">
-    INDEX
+    <h1>TOTO JE TESTOVACÍ PROVOZ</h1>
+    <h2>Všechny funkce nemusí být dostupné</h2>
 </div>
 
 
