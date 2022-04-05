@@ -109,7 +109,8 @@ echo '<script>
 <!-- Mapa kola -->
 <h2>Mapa kola - rozpracováno</h2>
 <p>Ve finální verzi se zde po kliknutí na komponentu otevře stejný modal jako z tabulky</p>
-<p>Silueta kola se bude měnit dle vybraného typu kola HT/FULL/Gravel/Silnice</p>
+<p>Silueta kola se bude měnit dle vybraného typu kola HT/FULL/Gravel/Silnice - můžete si vyzkoušet nyní klepnout na vidlici pro demonstraci funkce</p>
+<p>Tato funkce není prozatím odladěna pro zobrazení na mobilu.</p>
 <div class="d-flex justify-content-center my-4">
     <img src="assets/img/ht.jpeg" class="map img-fluid" usemap="#bikemap" 
         data-maphilight='{"strokeColor":"D4D2D1","strokeWidth":5,"fillColor":"ff0000","fillOpacity":0.6}'>

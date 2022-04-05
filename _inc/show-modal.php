@@ -1,6 +1,5 @@
 <?php
 
-// include
 require 'config.php';
 
 $zobrazenyTyp = $_GET['type'];

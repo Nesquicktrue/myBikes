@@ -17,21 +17,9 @@
         
     })
 
-    // Smazat komponentu modal potvrzení
-    $('.smazat').click((el)=>{
-        console.log(el)
-        //let mazaneKolo = el.currentTarget.parentElement.children[0].innerText;
-        //$('#deleteModalBody').text("Opravdu smazat kolo " + mazaneKolo + "?");
-        //$('#delBtn').click(()=>{
-          //  window.location = '_inc/delete-bike.php?id=' + el.currentTarget.attributes[1].value;
-        //})
-        
-    })
+ 
+    // AJAX pro pridani - zatím nepoužívám - refresh se nyní hodí
     
-    
-
-
-    // AJAX pro pridani
     /*     const pridatKomponentuForm = $('#pridatKomponentuForm');
     pridatKomponentuForm.on('submit', (event) => {
         event.preventDefault();

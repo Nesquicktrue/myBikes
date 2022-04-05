@@ -1,3 +1,4 @@
+<!-- Je třeba zapracovat id komponenty jako proměnné -->
 
  <!-- Představec -->
  <area alt="Predstavec" title="predstavec" 
@@ -9,8 +10,8 @@
 
  <!-- Vidlice -->
  <area alt="Vidlice" title="vidlice" 
-     class="part-map"
-     id="fork"
+     class="part"
+     id="2"
      coords="211,20,222,24,186,117,191,119,142,237,116,227,131,204,168,112,175,112" 
      shape="poly"
  >

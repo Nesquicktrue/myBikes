@@ -1,7 +1,7 @@
 <?php include "_partials/header.php" ?>
 
 <div class="container">
-    404
+     404
 </div>
 
 
