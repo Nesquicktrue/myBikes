@@ -1,0 +1,6 @@
+- overovat vlastnictvi bajku s kazdym dotazem do DB
+
+- mapa biku     - škálovat mapu společně s IMG
+                - id map part, aby fungoval modal
+
+- osekat JS (main.js?)
