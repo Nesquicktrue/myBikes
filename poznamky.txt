@@ -4,3 +4,4 @@
                 - id map part, aby fungoval modal
 
 - osekat JS (main.js?)
+- vracet hlášky po úpravě DB
